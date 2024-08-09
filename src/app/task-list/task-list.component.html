@@ -1,0 +1,12 @@
+<div *ngFor="let task of tasks" class="task-item">
+    <h3 [class.completed]="task.isCompleted">
+        <a [routerLink]="['/task', task.id]">{{ task.title }}</a>
+    </h3>
+    <p>{{ task.description }}</p>
+    <p>Due: {{ task.dueDate | date }}</p>
+    <p>Status: {{ task.isCompleted ? "Completed" : "Pending" }}</p>
+    <button mat-button color="primary" (click)="onMarkComplete(task)">
+        Mark as Completed
+    </button>
+    <button mat-button color="warn" (click)="onDelete(task.id)">Delete</button>
+</div>

@@ -1,0 +1,22 @@
+.task-form {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    row-gap: 20px;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.error-txt {
+    color: red;
+    margin-top: -14px;
+    display: flex;
+    width: 50%;
+    color: red;
+}

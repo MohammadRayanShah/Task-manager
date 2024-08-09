@@ -1,0 +1,27 @@
+<div>
+    <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm" class="task-form">
+      <div class="form-group">
+        <label for="title">Title*</label>
+        <input type="text" id="title" class="form-control" required [(ngModel)]="task.title" name="title" #title="ngModel">
+      </div>
+      <div *ngIf="title.invalid && title.touched" class="error-txt">
+        Title is required.
+      </div>
+      
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" class="form-control" [(ngModel)]="task.description" name="description"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="dueDate">Due Date*</label>
+        <input type="date" id="dueDate" class="form-control" required [(ngModel)]="task.dueDate" name="dueDate" #dueDate="ngModel">
+        <div *ngIf="dueDate.invalid && dueDate.touched" class="error-txt">
+          A valid due date is required.
+        </div>
+      </div>
+      
+      <button type="submit" class="btn btn-primary" [disabled]="taskForm.invalid">Add Task</button>
+    </form>
+  </div>
+  
