@@ -51,10 +51,13 @@ export class HomeComponent implements OnInit {
   }
 
   onDelete(taskId: number): void {
-    this.taskService.deleteTask(taskId).subscribe(() => {
-      this.taskService.getTasks().subscribe((tasks) => {
-        this.tasks = tasks;
-      });
+    this.taskService.deleteTask(taskId).subscribe({
+      next: (updatedTasks) => {
+        this.tasks = updatedTasks;
+      },
+      error: (err) => {
+        console.error('Error during task deletion:', err);
+      },
     });
   }
 

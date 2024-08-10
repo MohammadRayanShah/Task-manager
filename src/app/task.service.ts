@@ -25,8 +25,8 @@ export class TaskService {
     return of();
   }
 
-  deleteTask(id: number): Observable<void> {
+  deleteTask(id: number): Observable<Task[]> {
     this.tasks = this.tasks.filter((task) => task.id !== id);
-    return of();
+    return of(this.tasks);
   }
 }
