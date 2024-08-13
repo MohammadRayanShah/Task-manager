@@ -16,10 +16,10 @@
       <div class="form-group">
         <label for="dueDate">Due Date*</label>
         <input type="date" id="dueDate" class="form-control" required [(ngModel)]="task.dueDate" name="dueDate" #dueDate="ngModel">
-        <div *ngIf="dueDate.invalid && dueDate.touched" class="error-txt">
-          A valid due date is required.
-        </div>
-      </div>
+    </div>
+    <div *ngIf="dueDate.invalid && dueDate.touched" class="error-txt">
+      A valid due date is required.
+    </div>
       
       <button type="submit" class="btn btn-primary" [disabled]="taskForm.invalid">Add Task</button>
     </form>

@@ -1,29 +1,35 @@
 <div class="container">
     <!-- Search options start-->
-    <div class="search-bar">
-      <input type="text" placeholder="Search tasks..." [(ngModel)]="searchText" class="form-control">
+    <div class="search-sort-div">
+        <div class="search-bar">
+            <input type="text" style="    border-radius: 4px;
+    border: 1px solid black;     padding: 3px 6px;
+    " placeholder="Search tasks..." [(ngModel)]="searchText" class="form-control">
+        </div>
+
+        <!-- Sorting options start-->
+        <div class="sorting-options">
+            <button (click)="sortTasksBy('dueDate')" class="button" role="button" style="margin-right: 5px;">Sort by Due
+                Date</button>
+            <button (click)="sortTasksBy('status')" class="button" role="button">Sort by Status</button>
+        </div>
     </div>
-  
-    <!-- Sorting options start-->
-    <div class="sorting-options">
-      <button (click)="sortTasksBy('dueDate')" class="btn-sort">Sort by Due Date</button>
-      <button (click)="sortTasksBy('status')" class="btn-sort">Sort by Status</button>
-    </div>
-  
-    <app-task-form></app-task-form> 
-  
+
+    <app-task-form></app-task-form>
+
     <!-- List display start -->
     <div class="task-list-container">
-      <div *ngFor="let task of filteredTasks()" [ngClass]="getTaskClass(task)" class="task-item">
-        <h3 [class.completed]="task.isCompleted">
-          <a [routerLink]="['/task', task.id]" class="task-title">{{ task.title }}</a>
-        </h3>
-        <p>{{ task.description }}</p>
-        <p>Due: {{ task.dueDate | date }}</p>
-        <p>Status: {{ task.isCompleted ? 'Completed' : 'Pending' }}</p>
-        <button class="btn-action" (click)="onMarkComplete(task)">Mark as Completed</button>
-        <button class="btn-action btn-delete" (click)="confirmDelete(task.id)">Delete</button>
-      </div>
+        <div *ngFor="let task of filteredTasks()" [ngClass]="getTaskClass(task)" class="task-item">
+            <h3 [class.completed]="task.isCompleted">
+                <a [routerLink]="['/task', task.id]" class="task-title">{{
+                    task.title }}</a>
+            </h3>
+            <p>{{ task.description }}</p>
+            <p>Due: {{ task.dueDate | date }}</p>
+            <p>Status: {{ task.isCompleted ? 'Completed' : 'Pending' }}</p>
+            <button class="btn-action" (click)="onMarkComplete(task)">Mark as
+                Completed</button>
+            <button class="btn-action btn-delete" (click)="confirmDelete(task.id)">Delete</button>
+        </div>
     </div>
-  </div>
-  
+</div>

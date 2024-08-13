@@ -32,14 +32,6 @@
     cursor: not-allowed;
 }
 
-.search-bar {
-    margin-bottom: 20px;
-}
-
-.sorting-options {
-    margin-bottom: 20px;
-}
-
 .task-list-container {
     max-width: 600px;
     margin: 20px auto;
