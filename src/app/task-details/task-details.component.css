@@ -4,6 +4,11 @@
     align-items: baseline;
     row-gap: 20px;
     align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 50px 13rem;
+    padding: 20px 0px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
@@ -19,4 +24,24 @@
     display: flex;
     width: 50%;
     color: red;
+}
+
+.task-detail-heading {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+input,
+textarea {
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 5px 8px;
+    width: 40%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.save-btn {
+    margin-bottom: 20px;
 }

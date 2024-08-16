@@ -1,3 +1,7 @@
+body {
+    font-family: math !important;
+}
+
 .container {
     max-width: 600px;
     margin: 20px auto;
@@ -8,7 +12,7 @@
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .error-txt {
